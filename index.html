@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aulas de inglês personalizadas com 30 anos de experiência. Business English, preparação para entrevistas, viagens e exames. Agende sua aula experimental.">
     <title>King's English - Adriano Amaral da Silva</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
@@ -12,9 +15,9 @@
                 extend: {
                     colors: {
                         brand: {
-                            green: '#1B5E20', // Dark Forest Green
-                            dark: '#1A1A1A',  // Black
-                            gold: '#C9A933',  // Gold
+                            green: '#1B5E20',
+                            dark: '#1A1A1A',
+                            gold: '#C9A933',
                             light: '#F9F5F0'
                         }
                     },
@@ -35,6 +38,7 @@
         .gold-gradient {
             background: linear-gradient(135deg, #C9A933 0%, #BC9E2F 100%);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .card-hover {
@@ -59,71 +63,78 @@
         .animation-delay-4 { transition-delay: 0.4s; }
         .animation-delay-5 { transition-delay: 0.5s; }
         .animation-delay-6 { transition-delay: 0.6s; }
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #1A1A1A;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #C9A933;
-            border-radius: 20px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #BC9E2F;
-        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #1A1A1A; }
+        ::-webkit-scrollbar-thumb { background: #C9A933; border-radius: 20px; }
+        ::-webkit-scrollbar-thumb:hover { background: #BC9E2F; }
         .glass {
             background: rgba(26, 26, 26, 0.7);
             backdrop-filter: blur(10px);
         }
-        ..contrast-text { color: #F9F5F0 !important; }
-            color: #F5F0E8 !important;
+        .contrast-text { color: #F9F5F0 !important; }
+
+        /* Skip-link */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 1rem;
+            z-index: 100;
+            transition: top 0.2s ease;
         }
-    
+        .skip-link:focus {
+            top: 1rem;
+        }
 
-/* ===== Mini-footer flutuante ===== */
-#miniFooterWrap { transition: opacity .3s ease, visibility .3s ease; }
-#miniFooterWrap.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+        /* ===== Mini-footer flutuante ===== */
+        #miniFooterWrap { transition: opacity .3s ease, visibility .3s ease; }
+        #miniFooterWrap.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
 
-#miniFooterPanel {
-  opacity: 0;
-  transform: translateY(12px) scale(0.98);
-  transform-origin: bottom right;
-  pointer-events: none;
-  transition: opacity .28s cubic-bezier(.4,0,.2,1),
-              transform .28s cubic-bezier(.4,0,.2,1);
-}
-#miniFooterPanel.open {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  pointer-events: auto;
-}
+        #miniFooterPanel {
+            opacity: 0;
+            transform: translateY(12px) scale(0.98);
+            transform-origin: bottom right;
+            pointer-events: none;
+            transition: opacity .28s cubic-bezier(.4,0,.2,1),
+                        transform .28s cubic-bezier(.4,0,.2,1);
+        }
+        #miniFooterPanel.open {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
 
-@media (prefers-reduced-motion: reduce) {
-  #miniFooterWrap, #miniFooterPanel, #miniFooterChevron { transition: none !important; }
-}
-</style>
+        @media (prefers-reduced-motion: reduce) {
+            #miniFooterWrap, #miniFooterPanel, #miniFooterChevron { transition: none !important; }
+        }
+    </style>
 </head>
 <body class="font-sans antialiased bg-brand-dark text-brand-light">
+
+    <!-- Skip-link de acessibilidade -->
+    <a href="#main" class="skip-link bg-brand-gold text-brand-dark px-5 py-3 rounded-full font-bold shadow-xl">
+        Pular para o conteúdo principal
+    </a>
 
     <!-- Navbar -->
     <nav class="fixed w-full z-50 bg-brand-dark/90 backdrop-blur-md border-b border-brand-gold/50">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold tracking-tighter contrast-text">
-                K<span class="text-brand-gold">ing</span>'s
+            <div class="text-2xl font-bold tracking-tighter text-brand-light">
+                K<span class="text-brand-gold">ing</span>'s En<span class="text-brand-gold">glish</span>
             </div>
             <div class="flex items-center gap-4">
-                <a href="#contact" class="px-5 py-2 text-sm font-semibold rounded-full border border-brand-gold contrast-text hover:bg-brand-gold hover:text-brand-dark transition-colors duration-300">
+                <a href="#contact" class="px-5 py-2 text-sm font-semibold rounded-full border border-brand-gold text-brand-light hover:bg-brand-gold hover:text-brand-dark transition-colors duration-300">
                     Contato
                 </a>
             </div>
         </div>
     </nav>
 
+    <main id="main">
+
     <!-- Hero Section -->
     <section class="relative pt-32 pb-24 lg:pt-48 lg:pb-32 overflow-hidden bg-brand-dark">
         <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-brand-gold/10 via-brand-green to-brand-dark opacity-80"></div>
-        
+
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="flex flex-col lg:flex-row items-center gap-12">
                 <!-- Conteúdo do Hero -->
@@ -131,24 +142,25 @@
                     <p class="inline-block px-4 py-1 rounded-full text-sm font-semibold bg-brand-gold/20 text-brand-gold border border-brand-gold/30">
                         30 Anos de Experiência Comprovada
                     </p>
-                    <h1 class="text-5xl lg:text-6xl font-bold tracking-tight contrast-text">
+                    <h1 class="text-5xl lg:text-6xl font-bold tracking-tight text-brand-light mt-4">
                         <span class="gold-gradient">Destrave seu Inglês</span> para Oportunidades Globais
                     </h1>
-                    <p class="text-lg contrast-text mt-4 max-w-xl lg:mx-0">
+                    <p class="text-lg text-brand-light/90 mt-4 max-w-xl">
                         Aulas personalizadas para você conquistar fluência em negócios, viagens e exames. Do básico ao avançado, com um método focado em resultados reais e 30 anos de experiência comprovada.
                     </p>
-                    <a href="https://wa.me/554198517266?text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informações%20sobre%20suas%20aulas%20de%20ingl%C3%AAs." target="_blank" class="px-8 py-4 text-lg font-bold rounded-full gold-gradient text-brand-dark hover:bg-white transition-colors duration-300 shadow-lg block w-full sm:w-auto">
+                    <a href="https://wa.me/554198517266?text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20suas%20aulas%20de%20ingl%C3%AAs."
+                       target="_blank" rel="noopener noreferrer"
+                       class="mt-8 inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-full bg-brand-gold text-brand-dark hover:bg-white transition-colors duration-300 shadow-lg w-full sm:w-auto">
                         Agendar Aula Experimental via WhatsApp
                     </a>
                 </div>
-                
+
                 <!-- Imagem do Professor -->
                 <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
                     <div class="relative">
                         <div class="w-72 h-72 lg:w-96 lg:h-96 rounded-full border-4 border-brand-gold overflow-hidden shadow-[0_0_50px_rgba(212,168,67,0.2)]">
-                            <img src="./imagens/profile.png" alt="Adriano Amaral da Silva" class="w-full h-full object-cover">
+                            <img src="./imagens/profile.png" alt="Adriano Amaral da Silva" loading="lazy" width="384" height="384" class="w-full h-full object-cover">
                         </div>
-                        <!-- Selo de Prova Social flutuante -->
                         <div class="absolute -bottom-4 -left-4 lg:left-0 bg-brand-dark p-4 rounded-xl border border-brand-gold/30 shadow-xl">
                             <p class="text-brand-gold font-bold text-lg">+5.000</p>
                             <p class="text-gray-400 text-xs">Alunos Formados</p>
@@ -162,56 +174,52 @@
     <!-- Prova Social (Depoimentos) -->
     <section class="py-16 bg-brand-dark">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-2xl font-bold text-center contrast-text mb-10">Resultados de Quem Já Estudou Conosco</h2>
+            <h2 class="text-2xl font-bold text-center text-brand-light mb-10">Resultados de Quem Já Estudou Conosco</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Depoimento 1 -->
-                <div class="bg-brand-green/20 p-6 rounded-xl border border-brand-gold/20 fade-in-up animation-delay-2">
-                    <p class="contrast-text italic mb-4">"Precisava de inglês para reuniões de trabalho. Com as aulas focadas em Business English, em 4 meses já me sentia confiante para participar de calls com clientes internacionais."</p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full gold contrast-text flex items-center justify-center text-brand-dark font-bold text-sm">MC</div>
+                <figure class="bg-brand-green/20 p-6 rounded-xl border border-brand-gold/20 fade-in-up animation-delay-2">
+                    <blockquote class="text-brand-light/90 italic mb-4">"Precisava de inglês para reuniões de trabalho. Com as aulas focadas em Business English, em 4 meses já me sentia confiante para participar de calls com clientes internacionais."</blockquote>
+                    <figcaption class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-brand-gold text-brand-dark flex items-center justify-center font-bold text-sm" aria-hidden="true">MC</div>
                         <div>
-                            <p class="font-semibold contrast-text text-sm">Mariana Costa</p>
-                            <p class="text-xs text-gray-500">Gerente de Projetos</p>
+                            <p class="font-semibold text-brand-light text-sm">Mariana Costa</p>
+                            <p class="text-xs text-gray-400">Gerente de Projetos</p>
                         </div>
-                    </div>
-                </div>
-                <!-- Depoimento 2 -->
-                <div class="bg-brand-green/20 p-6 rounded-xl border border-brand-gold/20 fade-in-up animation-delay-3">
-                    <p class="contrast-text italic mb-4">"Meu objetivo era passar no TOEFL para um intercâmbio. O Adriano focou exatamente nas minhas dificuldades. Consegui a pontuação que precisava na primeira tentativa."</p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full gold contrast-text flex items-center justify-center text-brand-dark font-bold text-sm">LF</div>
+                    </figcaption>
+                </figure>
+                <figure class="bg-brand-green/20 p-6 rounded-xl border border-brand-gold/20 fade-in-up animation-delay-3">
+                    <blockquote class="text-brand-light/90 italic mb-4">"Meu objetivo era passar no TOEFL para um intercâmbio. O Adriano focou exatamente nas minhas dificuldades. Consegui a pontuação que precisava na primeira tentativa."</blockquote>
+                    <figcaption class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-brand-gold text-brand-dark flex items-center justify-center font-bold text-sm" aria-hidden="true">LF</div>
                         <div>
-                            <p class="font-semibold contrast-text text-sm">Lucas Ferreira</p>
-                            <p class="text-xs text-gray-500">Estudante de Engenharia</p>
+                            <p class="font-semibold text-brand-light text-sm">Lucas Ferreira</p>
+                            <p class="text-xs text-gray-400">Estudante de Engenharia</p>
                         </div>
-                    </div>
-                </div>
+                    </figcaption>
+                </figure>
             </div>
-        <!-- Vídeo de Apresentação -->
+        </div>
+    </section>
+
+    <!-- Vídeo de Apresentação -->
     <section class="py-12 bg-brand-dark">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold gold mb-4 contrast-text">Apresentação King's English</h2>
-                <p class="contrast-text text-sm">Conheça o método, a estrutura e por que 5.000+ alunos confiam nesta abordagem</p>
+                <h2 class="text-3xl font-bold text-brand-gold mb-4">Apresentação King's English</h2>
+                <p class="text-brand-light/90 text-sm">Conheça o método, a estrutura e por que 5.000+ alunos confiam nesta abordagem</p>
             </div>
-            <div class="relative aspect-video rounded-2xl overflow-hidden mb-8 shadow-2xl">
-                <video autoplay loop playsinline class="w-full h-full object-cover">
+            <div class="relative aspect-video rounded-2xl overflow-hidden mb-8 shadow-2xl bg-brand-dark">
+                <video autoplay muted loop playsinline controls preload="metadata" class="w-full h-full object-cover">
                     <source src="./videos/promotion.mp4" type="video/mp4">
                     Seu navegador não suporta vídeo HTML5.
                 </video>
-                <div class="absolute inset-0 flex items-center justify-center">
-                    <div class="bg-brand-dark/80 rounded-full p-3">
-                        <svg viewBox="0 0 24 24" class="w-10 h-10 gold contrast-text fill-current">
-                            <path d="M18.328 15.905c-.761.076-1.532.104-2.307.082 1.83-.527 3.337-1.722 4.393-3.646-.906.608-1.924.97-3.089.97-2.117 0-3.966-.993-4.793-2.564-1.12 1.495-2.548 2.436-4.3 3.136-.392-.028-.779-.038-1.167-.038-.617 0-1.164.173-1.624.476.667-.068 1.262-.21 1.782-.405-.628.028-1.242.134-1.813.296.676.236 1.296.535 1.832.875v.085zm-2.028-7.215c-.282.028-.557.06-.828.104-.906.698-1.518-1.68-1.518-2.834 0-1.154.26-2.136.756-3.033 1.016-.21 2.128-.438 3.089-.616.62-.123 1.223-.215 1.793-.353.944-.19 1.815-.37 2.651-.536.316-.065.613-.118.894-.164.415-.066.813-.117 1.178-.164.696-.08 1.304-.132 1.808-.227.816-.143 1.523-.275 2.131-.424.793-.202 1.533-.452 2.17-.732.694-.31 1.298-.657 1.788-.11.682.654.99 1.424.853.995-.186 1.889-.723 2.576-1.523.797-.88.98-2.038.466-3.014-.615.02-.767-.01-1.129.02-.383.027-.756.065-1.11.117-.426.06- .832.104-1.232.13-.527.033-1.033.055-1.512.077-.056.003-.111.006-.166.009-.075.005-.149.009-.224.014-.139.01-2.65.06-3.71.174-.236.023-.467.027-.696.005-.377-.025-.739-.05-1.088-.087-.518-.046-1.007-.107-1.481-.164-.06-.009-.12-.012-.18-.018-.089-.009-.179-.017-.27-.025zM8.688 9.333c-.338.015-.674.023-.102.35.28.136.543.307.772.514.593.432.995.8.973 1.27.513.515-.057.979-.224 1.334-.563.36-.338.538-.76.509-1.213-.028-.453-.107-.883-.186-1.305-.132-.464.04- .928.066-1.365.113-.592.055-1.101.146-1.554.215-.649.095-1.224.163-1.723.265-.563.096-1.076.16-1.575.216-.372.037-.73.074-.105.27.316.973.157 1.259-.295 2.449-.714 3.394-1.308.385-.238.699-.505.896-.675.253-.224.38-.507.38-.813 0-.307-.07-.591-.21- .865-.245-.417-.595-.768-.993-1.093-.578-.51-1.117-.826-1.657-1.064-.54-.237-1.066-.408-1.563-.584z"/>
-                        </svg>
-                    </div>
-                </div>
             </div>
-            <div class="flex flex-col sm:flex-row gap-2 justify-center">
-                <a href="https://wa.me/554198517266?text=Ol%C3%A1%2C%20gostei%20do%20vídeo%20e%20quero%20agendar%20a%20minha%20aula%20experimental." target="_blank" class="px-8 py-4 text-lg font-bold rounded-full gold contrast-text hover:bg-white transition-colors duration-300 shadow-lg">
+            <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                <a href="https://wa.me/554198517266?text=Ol%C3%A1%2C%20gostei%20do%20v%C3%ADdeo%20e%20quero%20agendar%20a%20minha%20aula%20experimental."
+                   target="_blank" rel="noopener noreferrer"
+                   class="px-8 py-4 text-lg font-bold rounded-full bg-brand-gold text-brand-dark hover:bg-white transition-colors duration-300 shadow-lg text-center">
                     Agendar Aula Experimental
                 </a>
-                <a href="#ofertas" class="px-8 py-4 text-lg font-bold rounded-full border-2 border-brand-gold contrast-text hover:bg-brand-gold hover:text-brand-dark transition-colors duration-300">
+                <a href="#ofertas" class="px-8 py-4 text-lg font-bold rounded-full border-2 border-brand-gold text-brand-light hover:bg-brand-gold hover:text-brand-dark transition-colors duration-300 text-center">
                     Saiba Mais
                 </a>
             </div>
@@ -219,56 +227,58 @@
     </section>
 
     <!-- Três Ofertas Concretas -->
-    <a id="ofertas"></a>
-    <section class="py-24 bg-brand-dark">
+    <section id="ofertas" class="py-24 bg-brand-dark">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold gold mb-4">Escolha a oferta que mais combina com seu objetivo</h2>
-                <p class="contrast-text text-lg max-w-2xl mx-auto">Três caminhos diretos para a fluência. Sem enrolação. Escolha o que se adapta à sua realidade e agenda.</p>
+                <h2 class="text-3xl font-bold text-brand-gold mb-4">Escolha a oferta que mais combina com seu objetivo</h2>
+                <p class="text-brand-light/90 text-lg max-w-2xl mx-auto">Três caminhos diretos para a fluência. Sem enrolação. Escolha o que se adapta à sua realidade e agenda.</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <!-- Oferta 1: Aula Diagnóstica -->
-                <div class="bg-brand-dark/50 p-6 rounded-2xl border border-brand-gold/20 hover:border-brand-gold/30 transition-all duration-300 fade-in-up animation-delay-1">
-                    <h3 class="font-bold contrast-text text-lg mb-2">Aula Diagnóstica (30 min)</h3>
-                    <p class="contrast-text text-sm mb-4">Avaliação do seu nível atual e definição de objetivos em uma sessão única.</p>
-                    <ul class="contrast-text text-xs space-y-1">
+                <div class="bg-brand-dark/50 p-6 rounded-2xl border border-brand-gold/20 hover:border-brand-gold/50 transition-all duration-300 fade-in-up animation-delay-1">
+                    <h3 class="font-bold text-brand-light text-lg mb-2">Aula Diagnóstica (30 min)</h3>
+                    <p class="text-brand-light/85 text-sm mb-4">Avaliação do seu nível atual e definição de objetivos em uma sessão única.</p>
+                    <ul class="text-brand-light/85 text-xs space-y-1 mb-4">
                         <li>30 minutos de duração</li>
                         <li>Nível e objetivos mapeados</li>
                         <li>Plano de estudo personalizado</li>
                         <li>Sem compromisso após a aula</li>
                     </ul>
-                    <a href="https://wa.me/554198517266?text=Ol%C3%A1%2C%20Quero%20agendar%20a%20Aula%20Diagnóstica%20de%2030%20min." target="_blank" class="mt-3 inline-flex items-center gap-2 px-4 py-2 text-sm font-bold rounded-full gold contrast-text hover:bg-white transition-colors">
+                    <a href="https://wa.me/554198517266?text=Ol%C3%A1%2C%20Quero%20agendar%20a%20Aula%20Diagn%C3%B3stica%20de%2030%20min."
+                       target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center gap-2 px-4 py-2 text-sm font-bold rounded-full bg-brand-gold text-brand-dark hover:bg-white transition-colors">
                         Agendar Agora
                     </a>
                 </div>
 
-                <!-- Oferta 2: Plano de Fluência Semanal -->
-                <div class="bg-brand-dark/50 p-6 rounded-2xl border border-brand-gold/20 hover:border-brand-gold/30 transition-all duration-300 fade-in-up animation-delay-2">
-                    <h3 class="font-bold contrast-text text-lg mb-2">Plano de Fluência Semanal</h3>
-                    <p class="contrast-text text-sm mb-4">Aulas semanais de 60min com acompanhamento progressivo e material exclusivo.</p>
-                    <ul class="contrast-text text-xs space-y-1">
+                <div class="bg-brand-dark/50 p-6 rounded-2xl border border-brand-gold/20 hover:border-brand-gold/50 transition-all duration-300 fade-in-up animation-delay-2">
+                    <h3 class="font-bold text-brand-light text-lg mb-2">Plano de Fluência Semanal</h3>
+                    <p class="text-brand-light/85 text-sm mb-4">Aulas semanais de 60min com acompanhamento progressivo e material exclusivo.</p>
+                    <ul class="text-brand-light/85 text-xs space-y-1 mb-4">
                         <li>Aulas semanais de 60min</li>
                         <li>Material didático exclusivo</li>
                         <li>Acompanhamento de progresso</li>
                         <li>Pacotes de 4 ou 8 aulas</li>
                     </ul>
-                    <a href="https://wa.me/554198517266?text=Ol%C3%A1%2C%20Interessado%20no%20Plano%20de%20Flu%C3%AAncia%20Semanal." target="_blank" class="mt-3 inline-flex items-center gap-2 px-4 py-2 text-sm font-bold gold contrast-text hover:bg-white transition-colors">
+                    <a href="https://wa.me/554198517266?text=Ol%C3%A1%2C%20Interessado%20no%20Plano%20de%20Flu%C3%AAncia%20Semanal."
+                       target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center gap-2 px-4 py-2 text-sm font-bold rounded-full bg-brand-gold text-brand-dark hover:bg-white transition-colors">
                         Ver Pacotes
                     </a>
                 </div>
 
-                <!-- Oferta 3: Sprint sob Demanda -->
-                <div class="bg-brand-dark/50 p-6 rounded-2xl border border-brand-gold/20 hover:border-brand-gold/30 transition-all duration-300 fade-in-up animation-delay-3">
-                    <h3 class="font-bold contrast-text text-lg mb-2">Sprint sob Demanda (3 semanas)</h3>
-                    <p class="contrast-text text-sm mb-4">Pacote fechado de 3 semanas focado em objetivo específico (entrevista, exame ou viagem).</p>
-                    <ul class="contrast-text text-xs space-y-1">
+                <div class="bg-brand-dark/50 p-6 rounded-2xl border border-brand-gold/20 hover:border-brand-gold/50 transition-all duration-300 fade-in-up animation-delay-3">
+                    <h3 class="font-bold text-brand-light text-lg mb-2">Sprint sob Demanda (3 semanas)</h3>
+                    <p class="text-brand-light/85 text-sm mb-4">Pacote fechado de 3 semanas focado em objetivo específico (entrevista, exame ou viagem).</p>
+                    <ul class="text-brand-light/85 text-xs space-y-1 mb-4">
                         <li>3 semanas intensivas</li>
                         <li>Foco em objetivo específico</li>
                         <li>Simulações e prática direcionada</li>
                         <li>Certificado de conclusão</li>
                     </ul>
-                    <a href="https://wa.me/554198517266?text=Ol%C3%A1%2C%20Interessado%20no%20Sprint%20sob%20Demanda." target="_blank" class="mt-3 inline-flex items-center gap-2 px-4 py-2 text-sm font-bold gold contrast-text hover:bg-white transition-colors">
+                    <a href="https://wa.me/554198517266?text=Ol%C3%A1%2C%20Interessado%20no%20Sprint%20sob%20Demanda."
+                       target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center gap-2 px-4 py-2 text-sm font-bold rounded-full bg-brand-gold text-brand-dark hover:bg-white transition-colors">
                         Mais Informações
                     </a>
                 </div>
@@ -280,93 +290,93 @@
     <section class="py-24 bg-brand-dark">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-                <!-- Quem eu sou -->
                 <div>
-                    <h2 class="text-3xl font-bold gold mb-8 font-serif contrast-text">Quem eu sou</h2>
-                    <p class="contrast-text text-lg mb-6">
-                        Como professor de inglês há 30 anos, já ajudou mais de 5.000 alunos a conquistarem fluência para oportunidades globais. Minha abordagem foca no resultado prático: você falando inglês no trabalho, nos estudos ou nas viagens, rapidamente.
+                    <h2 class="text-3xl font-bold text-brand-gold mb-8 font-serif">Quem eu sou</h2>
+                    <p class="text-brand-light/90 text-lg mb-6">
+                        Como professor de inglês há 30 anos, já ajudei mais de 5.000 alunos a conquistarem fluência para oportunidades globais. Minha abordagem foca no resultado prático: você falando inglês no trabalho, nos estudos ou nas viagens, rapidamente.
                     </p>
-                    <ul class="space-y-4 contrast-text text-sm">
+                    <ul class="space-y-4 text-brand-light/90 text-sm">
                         <li class="flex items-start">
-                            <span class="text-brand-gold text-lg font-bold mr-3">✓</span>
+                            <span class="text-brand-gold text-lg font-bold mr-3" aria-hidden="true">✓</span>
                             <span>30 anos de experiência no ensino de inglês</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-brand-gold text-lg font-bold mr-3">✓</span>
+                            <span class="text-brand-gold text-lg font-bold mr-3" aria-hidden="true">✓</span>
                             <span>Mais de 5.000 alunos formados</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-brand-gold text-lg font-bold mr-3">✓</span>
+                            <span class="text-brand-gold text-lg font-bold mr-3" aria-hidden="true">✓</span>
                             <span>Metodologia focada em resultados reais</span>
                         </li>
                     </ul>
                 </div>
 
-                <!-- O meu diferencial -->
                 <div>
-                    <h2 class="text-3xl font-bold gold mb-8 font-serif contrast-text">O meu diferencial</h2>
+                    <h2 class="text-3xl font-bold text-brand-gold mb-8 font-serif">O meu diferencial</h2>
                     <ul class="space-y-6">
-                        <li class="flex items-start bg-brand-dark/50 p-4 rounded-lg border border-brand-gold/10">
-                            <span class="text-brand-gold text-xl font-bold mr-4">1</span>
-                            <span class="contrast-text">Aulas 100% personalizadas</span>
-                            <span class="contrast-text ml-4">Plano de estudo desenvolvido exclusivamente para seus objetivos e nível</span>
+                        <li class="flex items-start gap-4 bg-brand-dark/50 p-4 rounded-lg border border-brand-gold/10">
+                            <span class="text-brand-gold text-xl font-bold" aria-hidden="true">1</span>
+                            <div>
+                                <p class="text-brand-light font-semibold">Aulas 100% personalizadas</p>
+                                <p class="text-brand-light/80 text-sm">Plano de estudo desenvolvido exclusivamente para seus objetivos e nível</p>
+                            </div>
                         </li>
-                        <li class="flex items-start bg-brand-dark/50 p-4 rounded-lg border border-brand-gold/10">
-                            <span class="text-brand-gold text-xl font-bold mr-4">2</span>
-                            <span class="contrast-text">Metodologia comprovada</span>
-                            <span class="contrast-text ml-4">Resultados mensuráveis desde a primeira aula</span>
+                        <li class="flex items-start gap-4 bg-brand-dark/50 p-4 rounded-lg border border-brand-gold/10">
+                            <span class="text-brand-gold text-xl font-bold" aria-hidden="true">2</span>
+                            <div>
+                                <p class="text-brand-light font-semibold">Metodologia comprovada</p>
+                                <p class="text-brand-light/80 text-sm">Resultados mensuráveis desde a primeira aula</p>
+                            </div>
                         </li>
-                        <li class="flex items-start bg-brand-dark/50 p-4 rounded-lg border border-brand-gold/10">
-                            <span class="text-brand-gold text-xl font-bold mr-4">3</span>
-                            <span class="contrast-text">Flexibilidade total</span>
-                            <span class="contrast-text ml-4">Online ou presencial, horários que se adaptam à sua rotina</span>
+                        <li class="flex items-start gap-4 bg-brand-dark/50 p-4 rounded-lg border border-brand-gold/10">
+                            <span class="text-brand-gold text-xl font-bold" aria-hidden="true">3</span>
+                            <div>
+                                <p class="text-brand-light font-semibold">Flexibilidade total</p>
+                                <p class="text-brand-light/80 text-sm">Online ou presencial, horários que se adaptam à sua rotina</p>
+                            </div>
                         </li>
                     </ul>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Metodologia Científica - Seção Independente com Bento Grid -->
-    <section class="py-24 bg-brand-dark/50 border-y border-brand-gold/10">
+    <!-- Metodologia Científica -->
+    <section id="metodologia" class="py-24 bg-brand-dark/50 border-y border-brand-gold/10">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 id="metodologia" class="text-3xl font-bold text-center gold mb-4 font-serif contrast-text">Metodologia com Base Científica</h2>
-            <p class="contrast-text text-center mb-8 max-w-2xl mx-auto">
+            <h2 class="text-3xl font-bold text-center text-brand-gold mb-4 font-serif">Metodologia com Base Científica</h2>
+            <p class="text-brand-light/90 text-center mb-8 max-w-2xl mx-auto">
                 Cada aula é construída sobre princípios consolidados pela pesquisa em Aquisição de Segunda Língua (SLA).
             </p>
-            
-            <!-- Bento Grid: 6 itens, com o primeiro ocupando 2 colunas -->
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Card em destaque (2 colunas) -->
                 <div class="md:col-span-2 lg:col-span-2 bg-brand-green/20 p-8 rounded-2xl border border-brand-gold/20">
-                    <h3 class="font-bold contrast-text text-xl mb-3">Abordagem Comunicativa</h3>
-                    <p class="contrast-text text-sm">A abordagem comunicativa é comprovadamente eficaz para a fluência oral em adultos. Estudos mostram ganhos estatisticamente significativos (tamanho de efeito d = 1.14) em comparação com métodos tradicionais. O foco está em conversação com propósito, não apenas repetição.</p>
+                    <h3 class="font-bold text-brand-light text-xl mb-3">Abordagem Comunicativa</h3>
+                    <p class="text-brand-light/85 text-sm">A abordagem comunicativa é comprovadamente eficaz para a fluência oral em adultos. Estudos mostram ganhos estatisticamente significativos (tamanho de efeito d = 1.14) em comparação com métodos tradicionais. O foco está em conversação com propósito, não apenas repetição.</p>
                 </div>
-                <!-- Cards normais (1 coluna cada) -->
                 <div class="bg-brand-green/20 p-6 rounded-2xl border border-brand-gold/20 fade-in-up animation-delay-1">
-                    <h3 class="font-bold contrast-text text-lg mb-3">Aprendizagem Baseada em Tarefas</h3>
-                    <p class="contrast-text text-sm">Cada aula simula situações reais do seu dia a dia ou trabalho. Estudos confirmam que o TBLT acelera a fluência e reduz a ansiedade ao falar, promovendo interação significativa e processamento linguístico em tempo real.</p>
+                    <h3 class="font-bold text-brand-light text-lg mb-3">Aprendizagem Baseada em Tarefas</h3>
+                    <p class="text-brand-light/85 text-sm">Cada aula simula situações reais do seu dia a dia ou trabalho. Estudos confirmam que o TBLT acelera a fluência e reduz a ansiedade ao falar, promovendo interação significativa e processamento linguístico em tempo real.</p>
                 </div>
                 <div class="bg-brand-green/20 p-6 rounded-2xl border border-brand-gold/20 fade-in-up animation-delay-2">
-                    <h3 class="font-bold contrast-text text-lg mb-3">Personalização</h3>
-                    <p class="contrast-text text-sm">Seu plano de estudo é desenhado para o seu nível, ritmo e objetivo. Abordagens personalizadas e centradas no aluno aumentam motivação, engajamento e resultados de aprendizagem, com maior autonomia e melhor retenção.</p>
+                    <h3 class="font-bold text-brand-light text-lg mb-3">Personalização</h3>
+                    <p class="text-brand-light/85 text-sm">Seu plano de estudo é desenhado para o seu nível, ritmo e objetivo. Abordagens personalizadas e centradas no aluno aumentam motivação, engajamento e resultados de aprendizagem, com maior autonomia e melhor retenção.</p>
                 </div>
                 <div class="bg-brand-green/20 p-6 rounded-2xl border border-brand-gold/20 fade-in-up animation-delay-3">
-                    <h3 class="font-bold contrast-text text-lg mb-3">Inglês para Objetivos Específicos (ESP)</h3>
-                    <p class="contrast-text text-sm">Todo o conteúdo parte da razão pela qual você está aprendendo inglês. A instrução ESP melhora significativamente comunicação profissional, confiança e autonomia em contextos de trabalho, especialmente quando combinado avec aprendizagem baseada em tarefas.</p>
+                    <h3 class="font-bold text-brand-light text-lg mb-3">Inglês para Objetivos Específicos (ESP)</h3>
+                    <p class="text-brand-light/85 text-sm">Todo o conteúdo parte da razão pela qual você está aprendendo inglês. A instrução ESP melhora significativamente comunicação profissional, confiança e autonomia em contextos de trabalho, especialmente quando combinado com aprendizagem baseada em tarefas.</p>
                 </div>
                 <div class="bg-brand-green/20 p-6 rounded-2xl border border-brand-gold/20 fade-in-up animation-delay-4">
-                    <h3 class="font-bold contrast-text text-lg mb-3">Gramática Aplicada</h3>
-                    <p class="contrast-text text-sm">Integramos instrução gramatical explícita e feedback corretivo dentro de uma abordagem comunicativa. Isso melhora a precisão sem sacrificar a comunicação — a atenção à forma sob demanda torna as conexões entre forma e função mais claras.</p>
+                    <h3 class="font-bold text-brand-light text-lg mb-3">Gramática Aplicada</h3>
+                    <p class="text-brand-light/85 text-sm">Integramos instrução gramatical explícita e feedback corretivo dentro de uma abordagem comunicativa. Isso melhora a precisão sem sacrificar a comunicação — a atenção à forma sob demanda torna as conexões entre forma e função mais claras.</p>
                 </div>
                 <div class="bg-brand-green/20 p-6 rounded-2xl border border-brand-gold/20 fade-in-up animation-delay-5">
-                    <h3 class="font-bold contrast-text text-lg mb-3">Pronúncia Adaptada ao Brasileiro</h3>
-                    <p class="contrast-text text-sm">Instrução explícita de pronúncia baseada nas dificuldades específicas de quem fala português. Atividades comunicativas desenhadas para ajudar brasileiros a superar processos de transferência da L1, com evidência empírica da necessidade de instrução direta de pronúncia.</p>
+                    <h3 class="font-bold text-brand-light text-lg mb-3">Pronúncia Adaptada ao Brasileiro</h3>
+                    <p class="text-brand-light/85 text-sm">Instrução explícita de pronúncia baseada nas dificuldades específicas de quem fala português. Atividades comunicativas desenhadas para ajudar brasileiros a superar processos de transferência da L1, com evidência empírica da necessidade de instrução direta de pronúncia.</p>
                 </div>
             </div>
             <div class="mt-8 pt-8 border-t border-brand-gold/20 text-center">
-                <p class="contrast-text text-sm">Princípios fundamentados por pesquisas em SLA aplicada à realidade do aprendiz adulto.</p>
+                <p class="text-brand-light/80 text-sm">Princípios fundamentados por pesquisas em SLA aplicada à realidade do aprendiz adulto.</p>
             </div>
         </div>
     </section>
@@ -375,287 +385,276 @@
     <section class="py-24 bg-brand-dark border-y border-brand-gold/10">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold gold contrast-text">Nossos Programas</h2>
-                <p class="contrast-text text-sm mb-6">Escolha o programa que melhor se adapta ao seu objetivo e nível. Para outras especialidades, consulte a lista abaixo.</p>
+                <h2 class="text-3xl font-bold text-brand-gold">Nossos Programas</h2>
+                <p class="text-brand-light/85 text-sm mt-2 mb-6">Escolha o programa que melhor se adapta ao seu objetivo e nível. Para outras especialidades, consulte a lista abaixo.</p>
             </div>
 
-            <!-- 3 Principais em destaque -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
-                <!-- Business English -->
-                <div class="bg-brand-dark/50 p-6 rounded-2xl border-l-4 border-brand-gold group-hover:border-l-4 border-brand-gold/50 transition-colors duration-300 fade-in-up animation-delay-1">
-                    <div class="text-3xl gold-gradient mb-2">B</div>
-                    <h3 class="font-bold contrast-text text-lg mb-2">Business English</h3>
-                    <p class="contrast-text text-sm">Reuniões, apresentações, negociações e comunicação corporativa. Para gestores, diretores e executivos que precisam atuar em ambientes internacionais.</p>
-                    <a href="https://wa.me/554198517266?text=Ol%C3%A1%2C%20Interessado%20no%20Business%20English." target="_blank" class="mt-2 inline-flex items-center gap-1 px-4 py-1.5 text-xs font-bold rounded-full gold contrast-text hover:bg-white transition-colors">
+                <div class="bg-brand-dark/50 p-6 rounded-2xl border-l-4 border-brand-gold/50 hover:border-brand-gold transition-colors duration-300 fade-in-up animation-delay-1">
+                    <div class="text-3xl gold-gradient mb-2 font-bold" aria-hidden="true">B</div>
+                    <h3 class="font-bold text-brand-light text-lg mb-2">Business English</h3>
+                    <p class="text-brand-light/85 text-sm">Reuniões, apresentações, negociações e comunicação corporativa. Para gestores, diretores e executivos que precisam atuar em ambientes internacionais.</p>
+                    <a href="https://wa.me/554198517266?text=Ol%C3%A1%2C%20Interessado%20no%20Business%20English."
+                       target="_blank" rel="noopener noreferrer"
+                       class="mt-3 inline-flex items-center gap-1 px-4 py-1.5 text-xs font-bold rounded-full bg-brand-gold text-brand-dark hover:bg-white transition-colors">
                         Saiba mais
                     </a>
                 </div>
 
-                <!-- Preparação para Entrevistas -->
-                <div class="bg-brand-dark/50 p-6 rounded-2xl border-l-4 border-brand-gold group-hover:border-l-4 border-brand-gold/50 transition-colors duration-300 fade-in-up animation-delay-2">
-                    <div class="text-3xl gold-gradient mb-2">I</div>
-                    <h3 class="font-bold contrast-text text-lg mb-2">Entrevistas & Oportunidades</h3>
-                    <p class="contrast-text text-sm">Simulações de entrevistas, apresentação pessoal e preparação para processos seletivos em multinacionais. Foco em confiança e vocabular estratégico.</p>
-                    <a href="https://wa.me/554198517266?text=Ol%C3%A1%2C%20Interessado%20na%20preparat%C3%BA%20para%20entrevistas." target="_blank" class="mt-2 inline-flex items-center gap-1 px-4 py-1.5 text-xs font-bold rounded-full gold contrast-text hover:bg-white transition-colors">
+                <div class="bg-brand-dark/50 p-6 rounded-2xl border-l-4 border-brand-gold/50 hover:border-brand-gold transition-colors duration-300 fade-in-up animation-delay-2">
+                    <div class="text-3xl gold-gradient mb-2 font-bold" aria-hidden="true">I</div>
+                    <h3 class="font-bold text-brand-light text-lg mb-2">Entrevistas &amp; Oportunidades</h3>
+                    <p class="text-brand-light/85 text-sm">Simulações de entrevistas, apresentação pessoal e preparação para processos seletivos em multinacionais. Foco em confiança e vocabulário estratégico.</p>
+                    <a href="https://wa.me/554198517266?text=Ol%C3%A1%2C%20Interessado%20na%20prepara%C3%A7%C3%A3o%20para%20entrevistas."
+                       target="_blank" rel="noopener noreferrer"
+                       class="mt-3 inline-flex items-center gap-1 px-4 py-1.5 text-xs font-bold rounded-full bg-brand-gold text-brand-dark hover:bg-white transition-colors">
                         Saiba mais
                     </a>
                 </div>
 
-                <!-- Inglês para Viagens -->
-                <div class="bg-brand-dark/50 p-6 rounded-2xl border-l-4 border-brand-gold group-hover:border-l-4 border-brand-gold/50 transition-colors duration-300 fade-in-up animation-delay-3">
-                    <div class="text-3xl gold-gradient mb-2">V</div>
-                    <h3 class="font-bold contrast-text text-lg mb-2">Viagens & Turismo</h3>
-                    <p class="contrast-text text-sm">Aeroportos, imigração, hotéis e conversação prática para quem viaja a trabalho ou lazer. Fluência para se locomover Independente em qualquer país.</p>
-                    <a href="https://wa.me/554198517266?text=Ol%C3%A1%2C%20Interessado%20no%20ingl%C3%AAs%20para%20viagens." target="_blank" class="mt-2 inline-flex items-center gap-1 px-4 py-1.5 text-xs font-bold rounded-full gold contrast-text hover:bg-white transition-colors">
+                <div class="bg-brand-dark/50 p-6 rounded-2xl border-l-4 border-brand-gold/50 hover:border-brand-gold transition-colors duration-300 fade-in-up animation-delay-3">
+                    <div class="text-3xl gold-gradient mb-2 font-bold" aria-hidden="true">V</div>
+                    <h3 class="font-bold text-brand-light text-lg mb-2">Viagens &amp; Turismo</h3>
+                    <p class="text-brand-light/85 text-sm">Aeroportos, imigração, hotéis e conversação prática para quem viaja a trabalho ou lazer. Fluência para se locomover com independência em qualquer país.</p>
+                    <a href="https://wa.me/554198517266?text=Ol%C3%A1%2C%20Interessado%20no%20ingl%C3%AAs%20para%20viagens."
+                       target="_blank" rel="noopener noreferrer"
+                       class="mt-3 inline-flex items-center gap-1 px-4 py-1.5 text-xs font-bold rounded-full bg-brand-gold text-brand-dark hover:bg-white transition-colors">
                         Saiba mais
                     </a>
                 </div>
             </div>
 
-            <!-- Outros serviços (compacto) -->
-            <div class="grid grid-cols-2 gap-4 text-sm">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
                 <div class="bg-brand-green/10 p-4 rounded-lg border border-brand-gold/20">
-                    <span class="text-brand-gold font-bold">Inglês Geral</span> - Do básico ao avançado com foco em comunicação prática
+                    <span class="text-brand-gold font-bold">Inglês Geral</span> — Do básico ao avançado com foco em comunicação prática
                 </div>
                 <div class="bg-brand-green/10 p-4 rounded-lg border border-brand-gold/20">
-                    <span class="text-brand-gold font-bold">Aulas Online</span> - Flexíveis, individuais, com material direcionado ao seu objetivo
+                    <span class="text-brand-gold font-bold">Aulas Online</span> — Flexíveis, individuais, com material direcionado ao seu objetivo
                 </div>
                 <div class="bg-brand-green/10 p-4 rounded-lg border border-brand-gold/20">
-                    <span class="text-brand-gold font-bold">Saúde</span> - Vocabulário médico e comunicação clínica para profissionais da área
+                    <span class="text-brand-gold font-bold">Saúde</span> — Vocabulário médico e comunicação clínica para profissionais da área
                 </div>
                 <div class="bg-brand-green/10 p-4 rounded-lg border border-brand-gold/20">
-                    <span class="text-brand-gold font-bold">Tecnologia & TI</span> - Vocabulário técnico e comunicação em ambientes de tecnologia
+                    <span class="text-brand-gold font-bold">Tecnologia &amp; TI</span> — Vocabulário técnico e comunicação em ambientes de tecnologia
                 </div>
                 <div class="bg-brand-green/10 p-4 rounded-lg border border-brand-gold/20">
-                    <span class="text-brand-gold font-bold">Aviação</span> - Inglês técnico para aviação e conformidade ICAO
+                    <span class="text-brand-gold font-bold">Aviação</span> — Inglês técnico para aviação e conformidade ICAO
                 </div>
                 <div class="bg-brand-green/10 p-4 rounded-lg border border-brand-gold/20">
-                    <span class="text-brand-gold font-bold">Exames</span> - Preparação para IELTS, TOEFL e certificações internacionais
+                    <span class="text-brand-gold font-bold">Exames</span> — Preparação para IELTS, TOEFL e certificações internacionais
                 </div>
                 <div class="bg-brand-green/10 p-4 rounded-lg border border-brand-gold/20">
-                    <span class="text-brand-gold font-bold">Corporativo</span> - Treinamento institucional para equipes e empresas
+                    <span class="text-brand-gold font-bold">Corporativo</span> — Treinamento institucional para equipes e empresas
                 </div>
                 <div class="bg-brand-green/10 p-4 rounded-lg border border-brand-gold/20">
-                    <span class="text-brand-gold font-bold">Infância & Juventude</span> - English for kids e jovens com método lúdico
+                    <span class="text-brand-gold font-bold">Infância &amp; Juventude</span> — English for kids e jovens com método lúdico
                 </div>
             </div>
         </div>
     </section>
 
-    <a id="faq"></a>
-<!-- Seção de FAQ -->
-    <section class="py-24 bg-brand-dark">
+    <!-- FAQ -->
+    <section id="faq" class="py-24 bg-brand-dark">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-3xl font-bold gold text-center contrast-text mb-10">Perguntas Frequentes</h2>
+            <h2 class="text-3xl font-bold text-brand-gold text-center mb-10">Perguntas Frequentes</h2>
             <div class="space-y-4">
-                <div class="bg-brand-green/20 p-6 rounded-xl border border-brand-gold/20">
-                    <h3 class="font-bold contrast-text text-lg mb-2">As aulas são online ou presenciais?</h3>
-                    <p class="contrast-text">Ofereço ambas as opções. As aulas online são conduzidas via plataforma de sua preferência (Zoom, Google Meet ou Teams) com material interativo. As aulas presenciais podem ser agendadas conforme disponibilidade na sua região.</p>
-                </div>
-                <div class="bg-brand-green/20 p-6 rounded-xl border border-brand-gold/20">
-                    <h3 class="font-bold contrast-text text-lg mb-2">Como funciona a primeira aula experimental?</h3>
-                    <p class="contrast-text">A aula experimental tem duração de 30 minutos e serve para avaliar seu nível atual, definir seus objetivos e criar um plano de estudo personalizado. Não há compromisso após a aula experimental.</p>
-                </div>
-                <div class="bg-brand-green/20 p-6 rounded-xl border border-brand-gold/20">
-                    <h3 class="font-bold contrast-text text-lg mb-2">Qual é a duração e a frequência das aulas?</h3>
-                    <p class="contrast-text">As aulas têm 60 minutos e podem ser semanais ou bissemanais, conforme sua disponibilidade e objetivo. Recomendo frequência semanal para melhor retenção e progresso constante.</p>
-                </div>
-                <div class="bg-brand-green/20 p-6 rounded-xl border border-brand-gold/20">
-                    <h3 class="font-bold contrast-text text-lg mb-2">Você emite nota fiscal para empresas?</h3>
-                    <p class="contrast-text">Sim, emitimos nota fiscal para PJ e empresas que contratam nossos serviços de Inglês Corporativo. Todos os pagamentos e emissão de notas são realizados de forma transparente e online.</p>
-                </div>
-                <div class="bg-brand-green/20 p-6 rounded-xl border border-brand-gold/20">
-                    <h3 class="font-bold contrast-text text-lg mb-2">Quais são as formas de pagamento?</h3>
-                    <p class="contrast-text">Aceitamos pagamento via PIX, transferência bancária e cartão de crédito (em até 12x). Para empresas, oferecemos condições especiais e faturamento mensal.</p>
-                </div>
+                <details class="group bg-brand-green/20 rounded-xl border border-brand-gold/20">
+                    <summary class="cursor-pointer list-none p-6 font-bold text-brand-light text-lg flex justify-between items-center">
+                        As aulas são online ou presenciais?
+                        <span class="text-brand-gold group-open:rotate-180 transition-transform" aria-hidden="true">▾</span>
+                    </summary>
+                    <p class="px-6 pb-6 text-brand-light/85">Ofereço ambas as opções. As aulas online são conduzidas via plataforma de sua preferência (Zoom, Google Meet ou Teams) com material interativo. As aulas presenciais podem ser agendadas conforme disponibilidade na sua região.</p>
+                </details>
+                <details class="group bg-brand-green/20 rounded-xl border border-brand-gold/20">
+                    <summary class="cursor-pointer list-none p-6 font-bold text-brand-light text-lg flex justify-between items-center">
+                        Como funciona a primeira aula experimental?
+                        <span class="text-brand-gold group-open:rotate-180 transition-transform" aria-hidden="true">▾</span>
+                    </summary>
+                    <p class="px-6 pb-6 text-brand-light/85">A aula experimental tem duração de 30 minutos e serve para avaliar seu nível atual, definir seus objetivos e criar um plano de estudo personalizado. Não há compromisso após a aula experimental.</p>
+                </details>
+                <details class="group bg-brand-green/20 rounded-xl border border-brand-gold/20">
+                    <summary class="cursor-pointer list-none p-6 font-bold text-brand-light text-lg flex justify-between items-center">
+                        Qual é a duração e a frequência das aulas?
+                        <span class="text-brand-gold group-open:rotate-180 transition-transform" aria-hidden="true">▾</span>
+                    </summary>
+                    <p class="px-6 pb-6 text-brand-light/85">As aulas têm 60 minutos e podem ser semanais ou bissemanais, conforme sua disponibilidade e objetivo. Recomendo frequência semanal para melhor retenção e progresso constante.</p>
+                </details>
+                <details class="group bg-brand-green/20 rounded-xl border border-brand-gold/20">
+                    <summary class="cursor-pointer list-none p-6 font-bold text-brand-light text-lg flex justify-between items-center">
+                        Você emite nota fiscal para empresas?
+                        <span class="text-brand-gold group-open:rotate-180 transition-transform" aria-hidden="true">▾</span>
+                    </summary>
+                    <p class="px-6 pb-6 text-brand-light/85">Sim, emitimos nota fiscal para PJ e empresas que contratam nossos serviços de Inglês Corporativo. Todos os pagamentos e emissão de notas são realizados de forma transparente e online.</p>
+                </details>
+                <details class="group bg-brand-green/20 rounded-xl border border-brand-gold/20">
+                    <summary class="cursor-pointer list-none p-6 font-bold text-brand-light text-lg flex justify-between items-center">
+                        Quais são as formas de pagamento?
+                        <span class="text-brand-gold group-open:rotate-180 transition-transform" aria-hidden="true">▾</span>
+                    </summary>
+                    <p class="px-6 pb-6 text-brand-light/85">Aceitamos pagamento via PIX, transferência bancária e cartão de crédito (em até 12x). Para empresas, oferecemos condições especiais e faturamento mensal.</p>
+                </details>
             </div>
         </div>
     </section>
 
-    <!-- Let's Connect / Rodapé -->
+    <!-- Contato / Rodapé -->
     <section id="contact" class="py-24 bg-brand-dark border-t border-brand-gold">
-        <div class="max-w-3xl mx-auto px-6">
+        <div class="max-w-3xl mx-auto px-6 text-center">
             <div class="w-32 h-32 mx-auto rounded-full border-2 border-brand-gold overflow-hidden mb-8">
-                 <img src="./imagens/profile.png" alt="Adriano Amaral da Silva" class="w-full h-full object-cover">
+                <img src="./imagens/profile.png" alt="Adriano Amaral da Silva" loading="lazy" width="128" height="128" class="w-full h-full object-cover">
             </div>
-            <h2 class="text-4xl font-bold gold mb-4 contrast-text">King's English</h2>
-            <p class="contrast-text mb-8 max-w-lg mx-auto">
+            <h2 class="text-4xl font-bold text-brand-gold mb-4">King's English</h2>
+            <p class="text-brand-light/90 mb-8 max-w-lg mx-auto">
                 Com 30 anos de experiência no ensino de inglês, Adriano Amaral da Silva está pronto para ajudá-lo a alcançar seus objetivos de fluência. Seja para crescimento profissional, viagens ou comunicação cotidiana, nossas aulas personalizadas atendem às suas necessidades específicas.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="https://wa.me/554198517266?text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informações%20sobre%20suas%20aulas%20de%20ingl%CAs." target="_blank" class="inline-flex items-center gap-2 bg-brand-gold contrast-text px-8 py-4 rounded-full font-bold hover:bg-white transition-colors duration-300 shadow-lg">
-                    <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M18.328 15.905c-.761.076-1.532.104-2.307.082 1.83-.527 3.337-1.722 4.393-3.646-.906.608-1.924.97-3.089.97-2.117 0-3.966-.993-4.793-2.564-1.12 1.495-2.548 2.436-4.3 3.136-.392-.028-.779-.038-1.167-.038-.617 0-1.164.173-1.624.476.667-.068 1.262-.21 1.782-.405-.628.028-1.242.134-1.813.296.676.236 1.296.535 1.832.875v.085zm-2.028-7.215c-.282.028-.557.06-.828.104-.906.698-1.518-1.68-1.518-2.834 0-1.154.26-2.136.756-3.033 1.016-.21 2.128-.438 3.089-.616.62-.123 1.223-.215 1.793-.353.944-.19 1.815-.37 2.651-.536.316-.065.613-.118.894-.164.415-.066.813-.117 1.178-.164.696-.08 1.304-.132 1.808-.227.816-.143 1.523-.275 2.131-.424.793-.202 1.533-.452 2.17-.732.694-.31 1.298-.657 1.788-.11.682.654.99 1.424.853.995-.186 1.889-.723 2.576-1.523.797-.88.98-2.038.466-3.014-.615.02-.767-.01-1.129.02-.383.027-.756.065-1.11.117-.426.06- .832.104-1.232.13-.527.033-1.033.055-1.512.077-.056.003-.111.006-.166.009-.075.005-.149.009-.224.014-.139.01-2.65.06-3.71.174-.236.023-.467.027-.696.005-.377-.025-.739-.05-1.088-.087-.518-.046-1.007-.107-1.481-.164-.06-.009-.12-.012-.18-.018-.089-.009-.179-.017-.27-.025zM8.688 9.333c-.338.015-.674.023-.102.35.28.136.543.307.772.514.593.432.995.8.973 1.27.513.515-.057.979-.224 1.334-.563.36-.338.538-.76.509-1.213-.028-.453-.107-.883-.186-1.305-.132-.464.04- .928.066-1.365.113-.592.055-1.101.146-1.554.215-.649.095-1.224.163-1.723.265-.563.096-1.076.16-1.575.216-.372.037-.73.074-.105.27.316.973.157 1.259-.295 2.449-.714 3.394-1.308.385-.238.699-.505.896-.675.253-.224.38-.507.38-.813 0-.307-.07-.591-.21- .865-.245-.417-.595-.768-.993-1.093-.578-.51-1.117-.826-1.657-1.064-.54-.237-1.066-.408-1.563-.584z"/></svg>
+                <a href="https://wa.me/554198517266?text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20suas%20aulas%20de%20ingl%C3%AAs."
+                   target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center justify-center gap-2 bg-brand-gold text-brand-dark px-8 py-4 rounded-full font-bold hover:bg-white transition-colors duration-300 shadow-lg">
+                    <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
                     Falar no WhatsApp
                 </a>
             </div>
-        </div>
-        <div class="mt-24 text-gray-600 text-sm">
-            &copy; 2026 King's English. Todos os direitos reservados.
+            <p class="mt-24 text-gray-400 text-sm">
+                &copy; 2026 King's English. Todos os direitos reservados.
+            </p>
         </div>
     </section>
 
+    </main>
+
     <script>
-        // Animação fade-in-up ao rolar
         document.addEventListener('DOMContentLoaded', function() {
             const elements = document.querySelectorAll('.fade-in-up');
-            
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
                     }
                 });
             }, {
                 threshold: 0.1,
                 rootMargin: '0px 0px -50px 0px'
             });
-            
             elements.forEach(el => observer.observe(el));
         });
     </script>
 
-<!-- ===== Mini-footer flutuante expansível ===== -->
-<div id="miniFooterWrap"
-     class="fixed z-40 inset-x-4 bottom-[max(1rem,env(safe-area-inset-bottom))]
-            sm:inset-x-auto sm:right-6 sm:bottom-6
-            flex flex-col items-stretch sm:items-end gap-3
-            pointer-events-none">
+    <!-- ===== Mini-footer flutuante expansível ===== -->
+    <div id="miniFooterWrap"
+         class="fixed z-40 inset-x-4 bottom-[max(1rem,env(safe-area-inset-bottom))]
+                sm:inset-x-auto sm:right-6 sm:bottom-6
+                flex flex-col items-stretch sm:items-end gap-3
+                pointer-events-none">
 
-  <!-- Painel que expande -->
-  <div id="miniFooterPanel"
-       class="w-full sm:w-[22rem]"
-       aria-hidden="true" inert>
-    <div class="bg-brand-dark/95 backdrop-blur-md rounded-2xl
-                border border-brand-gold/40
-                shadow-[0_12px_50px_-8px_rgba(0,0,0,0.7)] overflow-hidden">
+        <div id="miniFooterPanel"
+             class="w-full sm:w-[22rem]"
+             aria-hidden="true" inert>
+            <div class="bg-brand-dark/95 backdrop-blur-md rounded-2xl border border-brand-gold/40 shadow-[0_12px_50px_-8px_rgba(0,0,0,0.7)] overflow-hidden">
 
-      <!-- Cabeçalho -->
-      <div class="flex items-center gap-3 p-4 border-b border-brand-gold/15">
-        <div class="w-11 h-11 rounded-full border-2 border-brand-gold overflow-hidden shrink-0">
-          <img src="./imagens/profile.png" alt="Adriano Amaral da Silva"
-               class="w-full h-full object-cover">
+                <div class="flex items-center gap-3 p-4 border-b border-brand-gold/15">
+                    <div class="w-11 h-11 rounded-full border-2 border-brand-gold overflow-hidden shrink-0">
+                        <img src="./imagens/profile.png" alt="" loading="lazy" width="44" height="44" class="w-full h-full object-cover">
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <p class="text-brand-light font-semibold text-sm leading-tight truncate">Adriano Amaral da Silva</p>
+                        <p class="text-brand-gold text-xs leading-tight">Professor de Inglês</p>
+                    </div>
+                    <span class="text-[10px] text-brand-gold bg-brand-green/20 border border-brand-gold/20 rounded-full px-2 py-1 shrink-0">30 anos</span>
+                </div>
+
+                <div class="p-4">
+                    <a href="https://wa.me/554198517266?text=Ol%C3%A1%2C%20quero%20agendar%20a%20aula%20experimental."
+                       target="_blank" rel="noopener noreferrer"
+                       class="flex items-center justify-center gap-2 w-full bg-brand-gold text-brand-dark px-4 py-3 rounded-full font-bold text-sm hover:brightness-110 active:scale-[0.98] transition">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                        Agendar aula experimental
+                    </a>
+                    <p class="text-center text-[11px] text-gray-400 mt-2">30 min · sem compromisso</p>
+                </div>
+
+                <nav class="px-4 pb-3 grid grid-cols-2 gap-2">
+                    <a href="#ofertas" class="text-brand-light/85 hover:text-brand-gold text-xs font-medium px-3 py-2 rounded-lg bg-brand-green/15 hover:bg-brand-green/25 border border-brand-gold/10 transition">Ofertas</a>
+                    <a href="#metodologia" class="text-brand-light/85 hover:text-brand-gold text-xs font-medium px-3 py-2 rounded-lg bg-brand-green/15 hover:bg-brand-green/25 border border-brand-gold/10 transition">Metodologia</a>
+                    <a href="#faq" class="text-brand-light/85 hover:text-brand-gold text-xs font-medium px-3 py-2 rounded-lg bg-brand-green/15 hover:bg-brand-green/25 border border-brand-gold/10 transition">FAQ</a>
+                    <a href="#contact" class="text-brand-light/85 hover:text-brand-gold text-xs font-medium px-3 py-2 rounded-lg bg-brand-green/15 hover:bg-brand-green/25 border border-brand-gold/10 transition">Contato</a>
+                </nav>
+
+                <p class="text-center text-[10px] text-gray-400 px-4 py-3 border-t border-brand-gold/15">
+                    © 2026 King's English · Todos os direitos reservados
+                </p>
+            </div>
         </div>
-        <div class="min-w-0 flex-1">
-          <p class="text-brand-light font-semibold text-sm leading-tight truncate">Adriano Amaral da Silva</p>
-          <p class="text-brand-gold text-xs leading-tight">Professor de Inglês</p>
-        </div>
-        <span class="text-[10px] text-brand-gold bg-brand-green/20 border border-brand-gold/20
-                     rounded-full px-2 py-1 shrink-0">30 anos</span>
-      </div>
 
-      <!-- CTA principal -->
-      <div class="p-4">
-        <a href="https://wa.me/554198517266?text=Ol%C3%A1%2C%20quero%20agendar%20a%20aula%20experimental."
-           target="_blank" rel="noopener"
-           class="flex items-center justify-center gap-2 w-full bg-brand-gold text-brand-dark
-                  px-4 py-3 rounded-full font-bold text-sm
-                  hover:brightness-110 active:scale-[0.98] transition">
-          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-          </svg>
-          Agendar aula experimental
-        </a>
-        <p class="text-center text-[11px] text-gray-400 mt-2">30 min · sem compromisso</p>
-      </div>
-
-      <!-- Links rápidos -->
-      <nav class="px-4 pb-3 grid grid-cols-2 gap-2">
-        <a href="#ofertas"     class="text-brand-light/85 hover:text-brand-gold text-xs font-medium
-                                       px-3 py-2 rounded-lg bg-brand-green/15 hover:bg-brand-green/25
-                                       border border-brand-gold/10 transition">Ofertas</a>
-        <a href="#metodologia" class="text-brand-light/85 hover:text-brand-gold text-xs font-medium
-                                       px-3 py-2 rounded-lg bg-brand-green/15 hover:bg-brand-green/25
-                                       border border-brand-gold/10 transition">Metodologia</a>
-        <a href="#faq"         class="text-brand-light/85 hover:text-brand-gold text-xs font-medium
-                                       px-3 py-2 rounded-lg bg-brand-green/15 hover:bg-brand-green/25
-                                       border border-brand-gold/10 transition">FAQ</a>
-        <a href="#contact"     class="text-brand-light/85 hover:text-brand-gold text-xs font-medium
-                                       px-3 py-2 rounded-lg bg-brand-green/15 hover:bg-brand-green/25
-                                       border border-brand-gold/10 transition">Contato</a>
-      </nav>
-
-      <!-- Small print -->
-      <p class="text-center text-[10px] text-gray-500 px-4 py-3 border-t border-brand-gold/15">
-        © 2026 King's English · Todos os direitos reservados
-      </p>
+        <button id="miniFooterToggle"
+                class="pointer-events-auto group w-full sm:w-auto flex items-center gap-3 bg-brand-dark/95 backdrop-blur-md border border-brand-gold/50 hover:border-brand-gold rounded-full pl-1.5 pr-4 py-1.5 shadow-[0_8px_28px_-6px_rgba(0,0,0,0.6)] hover:shadow-[0_8px_28px_-6px_rgba(201,169,51,0.35)] transition-all active:scale-[0.98]"
+                aria-expanded="false" aria-controls="miniFooterPanel">
+            <span class="w-9 h-9 rounded-full border-2 border-brand-gold overflow-hidden shrink-0">
+                <img src="./imagens/profile.png" alt="" loading="lazy" width="36" height="36" class="w-full h-full object-cover">
+            </span>
+            <span class="flex-1 sm:flex-none text-left">
+                <span class="block text-brand-light text-sm font-semibold leading-tight">Falar com o Adriano</span>
+                <span class="block text-brand-gold text-[11px] leading-tight">Professor de Inglês</span>
+            </span>
+            <svg id="miniFooterChevron" class="w-4 h-4 text-brand-gold transition-transform duration-300 shrink-0"
+                 fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M18 15l-6-6-6 6"/>
+            </svg>
+        </button>
     </div>
-  </div>
 
-  <!-- Pílula toggle (sempre visível) -->
-  <button id="miniFooterToggle"
-          class="pointer-events-auto group w-full sm:w-auto flex items-center gap-3
-                 bg-brand-dark/95 backdrop-blur-md border border-brand-gold/50
-                 hover:border-brand-gold rounded-full pl-1.5 pr-4 py-1.5
-                 shadow-[0_8px_28px_-6px_rgba(0,0,0,0.6)]
-                 hover:shadow-[0_8px_28px_-6px_rgba(201,169,51,0.35)]
-                 transition-all active:scale-[0.98]"
-          aria-expanded="false" aria-controls="miniFooterPanel">
-    <span class="w-9 h-9 rounded-full border-2 border-brand-gold overflow-hidden shrink-0">
-      <img src="./imagens/profile.png" alt="" class="w-full h-full object-cover">
-    </span>
-    <span class="flex-1 sm:flex-none text-left">
-      <span class="block text-brand-light text-sm font-semibold leading-tight">Falar com o Adriano</span>
-      <span class="block text-brand-gold text-[11px] leading-tight">Professor de Inglês</span>
-    </span>
-    <svg id="miniFooterChevron" class="w-4 h-4 text-brand-gold transition-transform duration-300 shrink-0"
-         fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M18 15l-6-6-6 6"/>
-    </svg>
-  </button>
-</div>
-\s<script>
-(function () {
-  const KEY = 'kings_minifooter_open';
-  const wrap    = document.getElementById('miniFooterWrap');
-  const toggle  = document.getElementById('miniFooterToggle');
-  const panel   = document.getElementById('miniFooterPanel');
-  const chevron = document.getElementById('miniFooterChevron');
-  if (!wrap || !toggle || !panel) return;
+    <script>
+        (function () {
+            const KEY = 'kings_minifooter_open';
+            const wrap    = document.getElementById('miniFooterWrap');
+            const toggle  = document.getElementById('miniFooterToggle');
+            const panel   = document.getElementById('miniFooterPanel');
+            const chevron = document.getElementById('miniFooterChevron');
+            if (!wrap || !toggle || !panel) return;
 
-  const isOpen = () => panel.classList.contains('open');
+            const isOpen = () => panel.classList.contains('open');
 
-  function setOpen(open) {
-    panel.classList.toggle('open', open);
-    toggle.setAttribute('aria-expanded', String(open));
-    panel.setAttribute('aria-hidden', String(!open));
-    if (open) panel.removeAttribute('inert');
-    else      panel.setAttribute('inert', '');
-    if (chevron) chevron.style.transform = open ? 'rotate(180deg)' : '';
-    try { sessionStorage.setItem(KEY, open ? '1' : '0'); } catch (e) {}
-  }
+            function setOpen(open) {
+                panel.classList.toggle('open', open);
+                toggle.setAttribute('aria-expanded', String(open));
+                panel.setAttribute('aria-hidden', String(!open));
+                if (open) panel.removeAttribute('inert');
+                else      panel.setAttribute('inert', '');
+                if (chevron) chevron.style.transform = open ? 'rotate(180deg)' : '';
+                try { sessionStorage.setItem(KEY, open ? '1' : '0'); } catch (e) {}
+            }
 
-  // Restaura estado da sessão
-  let saved = null;
-  try { saved = sessionStorage.getItem(KEY); } catch (e) {}
-  setOpen(saved === '1');
+            let saved = null;
+            try { saved = sessionStorage.getItem(KEY); } catch (e) {}
+            setOpen(saved === '1');
 
-  // Toggle
-  toggle.addEventListener('click', () => setOpen(!isOpen()));
+            toggle.addEventListener('click', () => setOpen(!isOpen()));
 
-  // Fecha ao clicar fora
-  document.addEventListener('click', (e) => {
-    if (isOpen() && !wrap.contains(e.target)) setOpen(false);
-  });
+            document.addEventListener('click', (e) => {
+                if (isOpen() && !wrap.contains(e.target)) setOpen(false);
+            });
 
-  // Fecha com ESC e devolve foco
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && isOpen()) { setOpen(false); toggle.focus(); }
-  });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && isOpen()) { setOpen(false); toggle.focus(); }
+            });
 
-  // Fecha ao clicar em qualquer link do painel
-  panel.querySelectorAll('a').forEach(a =>
-    a.addEventListener('click', () => setOpen(false))
-  );
+            panel.querySelectorAll('a').forEach(a =>
+                a.addEventListener('click', () => setOpen(false))
+            );
 
-  // Esconde quando a seção de contato (#contact) estiver visível
-  const contact = document.getElementById('contact');
-  if (contact) {
-    new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting && isOpen()) setOpen(false);
-      wrap.classList.toggle('is-hidden', entry.isIntersecting);
-    }, { threshold: 0.2 }).observe(contact);
-  }
-})();
-</script>
+            const contact = document.getElementById('contact');
+            if (contact) {
+                new IntersectionObserver(([entry]) => {
+                    if (entry.isIntersecting && isOpen()) setOpen(false);
+                    wrap.classList.toggle('is-hidden', entry.isIntersecting);
+                }, { threshold: 0.2 }).observe(contact);
+            }
+        })();
+    </script>
 </body>
 </html>
